@@ -11,6 +11,8 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        header: "var(--color-header)",
+        hero: "url(/home.jpg)",
       },
     },
   },
