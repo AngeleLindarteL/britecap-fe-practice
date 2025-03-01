@@ -1,0 +1,25 @@
+{
+  "header": {
+    "buttons": {
+      "call": "Call Us",
+      "apply": "Apply Now",
+      "activate": "Activate",
+      "signIn": "Sign In"
+    }
+  },
+  "home": {
+    "hero": {
+      "texts": {
+        "smarter": "SMARTER",
+        "faster": "FASTER",
+        "better": "BETTER",
+        "funding": "FUNDING",
+        "typewriter": "Faster Funding | Smarter Funding | Better Funding | Brite Capital"
+      }
+    },
+    "reviews": {
+      "title": "Join Thousands of Business Owners Like You"
+    }
+  },
+  "verified": "Verified"
+}

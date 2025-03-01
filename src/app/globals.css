@@ -7,14 +7,14 @@
     --background: #ffffff;
     --foreground: #171717;
     --color-header: var(--foreground);
+    --titles: #f97316;
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --titles: #ffffff;
 }
 
 

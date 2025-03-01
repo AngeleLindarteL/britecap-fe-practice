@@ -1,0 +1,25 @@
+{
+  "header": {
+    "buttons": {
+      "call": "Llámanos",
+      "apply": "Solicitar Ahora",
+      "activate": "Activar",
+      "signIn": "Iniciar Sesión"
+    }
+  },
+  "home": {
+    "hero": {
+      "texts": {
+        "smarter": "INTELIGENTE",
+        "faster": "RÁPIDO",
+        "better": "MEJOR",
+        "funding": "BRITECAP",
+        "typewriter": "Rápido Financiamiento | Financiamiento Inteligente | Mejor Financiamiento | Brite Capital"
+      }
+    },
+    "reviews": {
+      "title": "Únete a Miles de Propietarios de Negocios Como Tú"
+    }
+  },
+  "verified": "Verificado"
+}
