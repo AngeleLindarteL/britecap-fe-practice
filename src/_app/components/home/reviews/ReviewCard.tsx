@@ -1,4 +1,4 @@
-import { CheckBadgeIcon, StarIcon, TvIcon } from "@heroicons/react/16/solid";
+import { CheckBadgeIcon, StarIcon } from "@heroicons/react/16/solid";
 import { motion, MotionValue } from "motion/react";
 import { useTranslations } from "next-globe-gen";
 

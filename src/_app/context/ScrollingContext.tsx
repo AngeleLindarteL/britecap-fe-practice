@@ -1,46 +1,53 @@
-"use client"
+"use client";
 import { createContext, useEffect, useState } from "react";
 
-
-
 interface IScrollingContext {
-    isScrolling: boolean;
-    scrollTop: number;
+  isScrolling: boolean;
+  scrollTop: number;
 }
 
 const DEFAULT_SCROLLING_CONTEXT: IScrollingContext = {
-    isScrolling: false,
-    scrollTop: 0,
+  isScrolling: false,
+  scrollTop: 0,
 };
 
-const ScrollingContext = createContext<IScrollingContext>(DEFAULT_SCROLLING_CONTEXT);
+const ScrollingContext = createContext<IScrollingContext>(
+  DEFAULT_SCROLLING_CONTEXT
+);
 
-const ScrollingContextProvider = ({ children }: any) => {
-    const [isScrolling, setIsScrolling] = useState(DEFAULT_SCROLLING_CONTEXT.isScrolling);
-    const [scrollTop, setScrollTop] = useState(DEFAULT_SCROLLING_CONTEXT.scrollTop);
+const ScrollingContextProvider = ({
+  children,
+}: {
+  children: React.ReactNode;
+}) => {
+  const [isScrolling, setIsScrolling] = useState(
+    DEFAULT_SCROLLING_CONTEXT.isScrolling
+  );
+  const [scrollTop, setScrollTop] = useState(
+    DEFAULT_SCROLLING_CONTEXT.scrollTop
+  );
 
-    const handleScroll = () => {
-        setIsScrolling(true);
-        setScrollTop(window.scrollY);
+  const handleScroll = () => {
+    setIsScrolling(true);
+    setScrollTop(window.scrollY);
+  };
+
+  useEffect(() => {
+    if (!window) {
+      return;
+    }
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
     };
+  }, []);
 
-    useEffect(() => {
-        if (!window){
-            return
-        }
-        window.addEventListener("scroll", handleScroll);
-
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, []);
-
-    return (
-        <ScrollingContext.Provider value={{ isScrolling, scrollTop }}>
-            {children}
-        </ScrollingContext.Provider>
-        
-    );
+  return (
+    <ScrollingContext.Provider value={{ isScrolling, scrollTop }}>
+      {children}
+    </ScrollingContext.Provider>
+  );
 };
 
 export { ScrollingContext, ScrollingContextProvider };

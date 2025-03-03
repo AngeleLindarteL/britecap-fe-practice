@@ -6,7 +6,7 @@ import {
 } from "motion/react";
 import ReviewCard from "./ReviewCard";
 import { useTranslations } from "next-globe-gen";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 
 const Reviews = () => {
   const t = useTranslations();

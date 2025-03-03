@@ -3,7 +3,7 @@ import { PhoneIcon } from "@heroicons/react/16/solid";
 import Image from "next/image";
 import Link from "next/link";
 import HeaderLink from "./HeaderLink";
-import { useContext, useMemo } from "react";
+import { ChangeEvent, useContext, useMemo } from "react";
 import { ScrollingContext } from "@/_app/context/ScrollingContext";
 import { useLocale, useTranslations, useRoute } from "next-globe-gen";
 import { useRouter } from "next/navigation";
@@ -17,7 +17,7 @@ const Header = () => {
   const route = useRoute();
   const { push } = useRouter();
 
-  const changeLocale = (e: any) => {
+  const changeLocale = (e: ChangeEvent<HTMLSelectElement>) => {
     const newLocale = e.target.value;
 
     if (newLocale !== locale) {
