@@ -3,11 +3,12 @@ import { PhoneIcon } from "@heroicons/react/16/solid";
 import Image from "next/image";
 import Link from "next/link";
 import HeaderLink from "./HeaderLink";
-import Typewriter from "typewriter-effect";
-import { useContext, useEffect, useMemo, useState } from "react";
+import { useContext, useMemo } from "react";
 import { ScrollingContext } from "@/_app/context/ScrollingContext";
 import { useLocale, useTranslations, useRoute } from "next-globe-gen";
 import { useRouter } from "next/navigation";
+
+const LANGUAGE_OPTIONS = ["en", "es"];
 
 const Header = () => {
   const { scrollTop } = useContext(ScrollingContext);
@@ -20,7 +21,9 @@ const Header = () => {
     const newLocale = e.target.value;
 
     if (newLocale !== locale) {
-      const path = route.split("/").filter((e) => !["en", "es"].includes(e));
+      const path = route
+        .split("/")
+        .filter((e) => !LANGUAGE_OPTIONS.includes(e));
       console.log("redirecting to", newLocale, path);
       push(`/${newLocale}/${route}`);
     }
@@ -57,22 +60,24 @@ const Header = () => {
             <PhoneIcon className="h-5 w-5" />
             {t("header.buttons.call")}
           </Link>
-          <HeaderLink href="/apply" text={t("header.buttons.apply")} />
-          <HeaderLink href="/activate" text={t("header.buttons.activate")} />
-          <HeaderLink href="/signin" text={t("header.buttons.signIn")} />
+          <HeaderLink href="/en" text={t("header.buttons.apply")} />
+          <HeaderLink href="/en" text={t("header.buttons.activate")} />
+          <HeaderLink href="/en" text={t("header.buttons.signIn")} />
         </div>
         <hr className="border-background w-[98%] border-white" />
         <div className="pt-5 flex">
+          <p className="font-bold mr-3">{t("header.labels.language")}</p>
           <select
             name="select"
             defaultValue={locale}
             className="border-2 border-gray-200 rounded-md text-black"
             onChange={changeLocale}
           >
-            <option value="es">es</option>
-            <option value="en" selected>
-              en
-            </option>
+            {LANGUAGE_OPTIONS.map((opt) => (
+              <option key={opt} value={opt}>
+                {opt}
+              </option>
+            ))}
           </select>
         </div>
       </div>

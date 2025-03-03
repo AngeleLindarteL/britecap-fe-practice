@@ -5,6 +5,9 @@
       "apply": "Solicitar Ahora",
       "activate": "Activar",
       "signIn": "Iniciar Sesión"
+    },
+    "labels": {
+      "language": "Idioma"
     }
   },
   "home": {
@@ -18,7 +21,16 @@
       }
     },
     "reviews": {
-      "title": "Únete a Miles de Propietarios de Negocios Como Tú"
+      "title": "Únete a Miles de Propietarios de Negocios Como Tú",
+      "subtitle": "Descubre cómo miles de propietarios de negocios, como tú, han logrado sus metas de negocio con BriteCap. Escucha sus historias en Trustpilot."
+    },
+    "inNumbers": {
+      "title": "BRITECAP EN NÚMEROS",
+      "labels": {
+        "years": "AÑOS EN EL NEGOCIO",
+        "loans": "PRESTAMOS REALIZADOS",
+        "funding": "EN FINANCIAMIENTO ENTREGADO"
+      }
     }
   },
   "verified": "Verificado"

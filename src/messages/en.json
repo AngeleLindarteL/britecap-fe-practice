@@ -5,6 +5,9 @@
       "apply": "Apply Now",
       "activate": "Activate",
       "signIn": "Sign In"
+    },
+    "labels": {
+      "language": "Language"
     }
   },
   "home": {
@@ -18,7 +21,16 @@
       }
     },
     "reviews": {
-      "title": "Join Thousands of Business Owners Like You"
+      "title": "Join Thousands of Business Owners Like You",
+      "subtitle": "Discover how thousands of business owners, just like you, have achieved their business goals with BriteCap. Hear their stories on Trustpilot."
+    },
+    "inNumbers": {
+      "title": "BRITECAP BY THE NUMBERS",
+      "labels": {
+        "years": "YEARS IN BUSSINESS",
+        "loans": "LOANS DISTRIBUTED",
+        "funding": "IN FUNDING DELIVERED"
+      }
     }
   },
   "verified": "Verified"

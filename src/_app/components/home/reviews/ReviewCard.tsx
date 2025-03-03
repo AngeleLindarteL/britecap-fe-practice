@@ -1,5 +1,5 @@
 import { CheckBadgeIcon, StarIcon, TvIcon } from "@heroicons/react/16/solid";
-import { motion } from "motion/react";
+import { motion, MotionValue } from "motion/react";
 import { useTranslations } from "next-globe-gen";
 
 const ReviewCard = ({
@@ -8,21 +8,31 @@ const ReviewCard = ({
   daysAgo,
   rating,
   name,
+  translateY,
 }: {
   review: string;
   description: string;
   daysAgo: string;
   rating: number;
   name: string;
+  translateY: MotionValue<number>;
 }) => {
   const t = useTranslations();
 
   return (
-    <motion.div className="w-[250px] flex flex-col items-center justify-start bg-gray-100 h-[150px] p-2 bg-background border-b-2 border-b-gray-200">
+    <motion.div
+      className="w-[250px] flex flex-col items-center justify-start bg-gray-100 h-[150px] p-2 bg-background border-b-2 border-b-gray-200"
+      style={{
+        y: translateY,
+      }}
+    >
       <div className="flex w-full justify-between">
-        <figure className="flex ">
-          {Array.from(Array(rating).keys()).map(() => (
-            <span className="text-white p-1 border-2 border-gray-200 bg-green-500">
+        <figure className="flex">
+          {Array.from(Array(rating).keys()).map((_, i) => (
+            <span
+              key={i}
+              className="text-white p-1 border-2 border-gray-200 bg-green-500"
+            >
               <StarIcon className="w-3 h-3" />
             </span>
           ))}
@@ -33,7 +43,7 @@ const ReviewCard = ({
         </p>
       </div>
       <article className="flex w-full flex-col items-start mt-2">
-        <p className="text-gray-900 text-sm">{review}</p>
+        <p className="text-gray-900 text-sm font-bold">{review}</p>
         <p className="text-gray-500 text-sm">{description}</p>
       </article>
       <div className="mt-auto flex w-full gap-2">
